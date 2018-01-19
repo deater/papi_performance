@@ -1,0 +1,86 @@
+Cost of execution for PAPI start/stop, read and accum.
+This test takes a while. Please be patient...
+
+Performing loop latency test...
+
+Total cost for loop latency over 1000000 iterations
+min cycles   : 18
+max cycles   : 51587
+mean cycles  : 24.433721
+std deviation: 64.916365
+25% cycles   : 18
+50% cycles   : 24
+75% cycles   : 24
+99% cycles   : 37
+
+Performing start/stop test...
+
+Total cost for PAPI_start/stop (2 counters) over 1000000 iterations
+min cycles   : 8444
+max cycles   : 92788
+mean cycles  : 8553.347790
+std deviation: 193.767927
+25% cycles   : 8529
+50% cycles   : 8547
+75% cycles   : 8568
+99% cycles   : 8647
+
+Performing read test...
+
+Total cost for PAPI_read (2 counters) over 1000000 iterations
+min cycles   : 139
+max cycles   : 9402
+mean cycles  : 144.904981
+std deviation: 22.429688
+25% cycles   : 142
+50% cycles   : 145
+75% cycles   : 145
+99% cycles   : 164
+
+Performing read with timestamp test...
+
+Total cost for PAPI_read_ts (2 counters) over 1000000 iterations
+min cycles   : 142
+max cycles   : 14543
+mean cycles  : 148.312914
+std deviation: 27.978858
+25% cycles   : 145
+50% cycles   : 148
+75% cycles   : 148
+99% cycles   : 167
+
+Performing accum test...
+
+Total cost for PAPI_accum (2 counters) over 1000000 iterations
+min cycles   : 2233
+max cycles   : 100734
+mean cycles  : 2294.701100
+std deviation: 184.042627
+25% cycles   : 2285
+50% cycles   : 2294
+75% cycles   : 2300
+99% cycles   : 2354
+
+Performing reset test...
+
+Total cost for PAPI_reset (2 counters) over 1000000 iterations
+min cycles   : 2085
+max cycles   : 109685
+mean cycles  : 2133.202028
+std deviation: 145.548964
+25% cycles   : 2121
+50% cycles   : 2134
+75% cycles   : 2140
+99% cycles   : 2182
+	I was unable to find a DERIVED_POSTFIX preset event to test on this architecture, skipping.
+
+Performing DERIVED_[ADD|SUB] PAPI_read(2 counters)  test (PAPI_L1_TCM)...
+Total cost for  PAPI_read (1 derived_[add|sub] counter) over 1000000 iterations
+min cycles   : 139
+max cycles   : 31794
+mean cycles  : 144.760991
+std deviation: 69.544858
+25% cycles   : 142
+50% cycles   : 145
+75% cycles   : 145
+99% cycles   : 164

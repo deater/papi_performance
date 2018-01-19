@@ -1,0 +1,3 @@
+Some tests of the KPTI overhead
+
+The nokpti overhead was found by booting with pti=off
