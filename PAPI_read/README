@@ -1,0 +1,49 @@
+git clone https://bitbucket.org/icl/papi.git
+% commit 4c7cdf58f5e8df27e35e21b9311ad0296fbb5bf0
+commit a21e3da5096bb410eaf628648daae76042ee2745
+
+cd src
+./configure
+make
+./utils/papi_cost > result.1
+./utils/papi_cost > result.2
+./utils/papi_cost > result.3
+make clean
+./configure --enable-perfevent-rdpmc=yes
+make
+
+
+TO do the perfctr tests:
+	on core2 machine I have a 2.6.32-perfctr kernel installed
+	due to changes on the machine (systemd, ugh)
+	need to update command line to boot with init=/bin/sh
+	mount -o remount,rw /
+	chmod 666 /dev/perfctr
+	su - vince
+	export TERM=vt102
+	and make/build as per normal
+	need git version of PAPI as longtime bug in perfctr code
+
+To do the perfmon2 tests:
+	modern debian userspace requires 2.6.32 :(
+	perfmon2 last version is 2.6.30
+	sudo debootstrap --arch amd64 squeeze /srv/chroot/squeeze http://archive.debian.org/debian
+	apt-get instal gcc gfortran make
+
+	Boot into 2.6.30-perfmon and wait a long time for everthing
+	to time out and take you to the busybox menu.
+	
+	Manually create /dev/sda1
+	mknod sda1 b 8 1
+	mkdir /mnt
+	mnt /dev/sda1 /mnt
+	cd /mnt/srv/chroot/squeeze
+	chroot .
+	mount -t proc /proc proc
+	mount -t sysfs /sys sys
+	
+
+On Pentium II:
+	Need to disable NMI watchdog so we can run two events at a time
+	echo "0" > /proc/sys/kernel/nmi_watchdog
+

@@ -1,0 +1,65 @@
+Cost of execution for PAPI start/stop, read and accum.
+This test takes a while. Please be patient...
+
+Performing loop latency test...
+
+Total cost for loop latency over 1000000 iterations
+min cycles   : 28
+max cycles   : 40945
+mean cycles  : 38.079879
+std deviation: 53.280357
+ 
+Performing start/stop test...
+
+Total cost for PAPI_start/stop (2 counters) over 1000000 iterations
+min cycles   : 9557
+max cycles   : 2490472
+mean cycles  : 9738.080440
+std deviation: 2510.109725
+ 
+Performing read test...
+
+Total cost for PAPI_read (2 counters) over 1000000 iterations
+min cycles   : 1567
+max cycles   : 251522
+mean cycles  : 1586.012098
+std deviation: 299.724949
+ 
+Performing read with timestamp test...
+
+Total cost for PAPI_read_ts (2 counters) over 1000000 iterations
+min cycles   : 1586
+max cycles   : 76294
+mean cycles  : 1607.919175
+std deviation: 159.957908
+ 
+Performing accum test...
+
+Total cost for PAPI_accum (2 counters) over 1000000 iterations
+min cycles   : 3049
+max cycles   : 51870
+mean cycles  : 3090.388042
+std deviation: 205.496408
+ 
+Performing reset test...
+
+Total cost for PAPI_reset (2 counters) over 1000000 iterations
+min cycles   : 1501
+max cycles   : 70993
+mean cycles  : 1535.469932
+std deviation: 152.629302
+ 
+Performing DERIVED_POSTFIX PAPI_read(2 counters)  test (PAPI_SP_OPS)...
+Total cost for PAPI_read (1 derived_postfix counter) over 1000000 iterations
+min cycles   : 1862
+max cycles   : 49305
+mean cycles  : 1875.938073
+std deviation: 170.872976
+ 
+Performing DERIVED_[ADD|SUB] PAPI_read(2 counters)  test (PAPI_L2_DCA)...
+Total cost for  PAPI_read (1 derived_[add|sub] counter) over 1000000 iterations
+min cycles   : 1567
+max cycles   : 188186
+mean cycles  : 1591.741961
+std deviation: 250.420124
+ cost.c                                       PASSED

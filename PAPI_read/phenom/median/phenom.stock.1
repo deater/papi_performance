@@ -1,0 +1,79 @@
+Cost of execution for PAPI start/stop, read and accum.
+This test takes a while. Please be patient...
+
+Performing loop latency test...
+
+Total cost for loop latency over 1000000 iterations
+min cycles   : 75
+max cycles   : 43907
+mean cycles  : 78.670041
+std deviation: 62.542594
+25% cycles   : 75
+50% cycles   : 75
+75% cycles   : 75
+99% cycles   : 96
+
+Performing start/stop test...
+
+Total cost for PAPI_start/stop (2 counters) over 1000000 iterations
+min cycles   : 9310
+max cycles   : 118864
+mean cycles  : 9385.093797
+std deviation: 340.205774
+25% cycles   : 9363
+50% cycles   : 9381
+75% cycles   : 9393
+99% cycles   : 9415
+
+Performing read test...
+
+Total cost for PAPI_read (2 counters) over 1000000 iterations
+min cycles   : 1230
+max cycles   : 30323
+mean cycles  : 1248.434420
+std deviation: 129.336270
+25% cycles   : 1242
+50% cycles   : 1246
+75% cycles   : 1253
+99% cycles   : 1269
+
+Performing read with timestamp test...
+
+Total cost for PAPI_read_ts (2 counters) over 1000000 iterations
+min cycles   : 1229
+max cycles   : 41365
+mean cycles  : 1239.693704
+std deviation: 134.396931
+25% cycles   : 1232
+50% cycles   : 1237
+75% cycles   : 1240
+99% cycles   : 1258
+
+Performing accum test...
+
+Total cost for PAPI_accum (2 counters) over 1000000 iterations
+min cycles   : 2595
+max cycles   : 159693
+mean cycles  : 2654.829570
+std deviation: 294.990686
+25% cycles   : 2623
+50% cycles   : 2639
+75% cycles   : 2686
+99% cycles   : 2726
+
+Performing reset test...
+
+Total cost for PAPI_reset (2 counters) over 1000000 iterations
+min cycles   : 1387
+max cycles   : 29635
+mean cycles  : 1396.317054
+std deviation: 132.946311
+25% cycles   : 1389
+50% cycles   : 1391
+75% cycles   : 1403
+99% cycles   : 1419
+
+Performing DERIVED_POSTFIX PAPI_read(4 counters)  test (PAPI_L1_TCH)...cost.c                                       FAILED
+Line # 377
+Error in PAPI_add_event: Event exists, but cannot be counted due to hardware resource limits
+

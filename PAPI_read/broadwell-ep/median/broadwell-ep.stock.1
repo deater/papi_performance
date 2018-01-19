@@ -1,0 +1,97 @@
+Cost of execution for PAPI start/stop, read and accum.
+This test takes a while. Please be patient...
+
+Performing loop latency test...
+
+Total cost for loop latency over 1000000 iterations
+min cycles   : 24
+max cycles   : 11496
+mean cycles  : 24.745466
+std deviation: 13.375451
+25% cycles   : 24
+50% cycles   : 24
+75% cycles   : 24
+99% cycles   : 32
+
+Performing start/stop test...
+
+Total cost for PAPI_start/stop (2 counters) over 1000000 iterations
+min cycles   : 5800
+max cycles   : 426660
+mean cycles  : 5956.630385
+std deviation: 2063.458624
+25% cycles   : 5854
+50% cycles   : 5870
+75% cycles   : 5886
+99% cycles   : 8404
+
+Performing read test...
+
+Total cost for PAPI_read (2 counters) over 1000000 iterations
+min cycles   : 718
+max cycles   : 418180
+mean cycles  : 748.445298
+std deviation: 595.710341
+25% cycles   : 740
+50% cycles   : 748
+75% cycles   : 752
+99% cycles   : 786
+
+Performing read with timestamp test...
+
+Total cost for PAPI_read_ts (2 counters) over 1000000 iterations
+min cycles   : 722
+max cycles   : 419733
+mean cycles  : 753.784760
+std deviation: 727.726993
+25% cycles   : 748
+50% cycles   : 752
+75% cycles   : 756
+99% cycles   : 792
+
+Performing accum test...
+
+Total cost for PAPI_accum (2 counters) over 1000000 iterations
+min cycles   : 1492
+max cycles   : 423978
+mean cycles  : 1533.806897
+std deviation: 1032.049279
+25% cycles   : 1522
+50% cycles   : 1526
+75% cycles   : 1536
+99% cycles   : 1568
+
+Performing reset test...
+
+Total cost for PAPI_reset (2 counters) over 1000000 iterations
+min cycles   : 766
+max cycles   : 418981
+mean cycles  : 787.752359
+std deviation: 729.306805
+25% cycles   : 778
+50% cycles   : 788
+75% cycles   : 790
+99% cycles   : 794
+
+Performing DERIVED_POSTFIX PAPI_read(3 counters)  test (PAPI_SP_OPS)...
+Total cost for PAPI_read (1 derived_postfix counter) over 1000000 iterations
+min cycles   : 1016
+max cycles   : 430524
+mean cycles  : 1057.740784
+std deviation: 851.695771
+25% cycles   : 1048
+50% cycles   : 1052
+75% cycles   : 1058
+99% cycles   : 1096
+
+Performing DERIVED_[ADD|SUB] PAPI_read(2 counters)  test (PAPI_L1_TCM)...
+Total cost for  PAPI_read (1 derived_[add|sub] counter) over 1000000 iterations
+min cycles   : 722
+max cycles   : 418171
+mean cycles  : 754.470759
+std deviation: 729.025269
+25% cycles   : 748
+50% cycles   : 752
+75% cycles   : 756
+99% cycles   : 794
+cost.c                                       PASSED

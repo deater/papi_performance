@@ -1,0 +1,59 @@
+Cost of execution for PAPI start/stop, read and accum.
+This test takes a while. Please be patient...
+
+Performing loop latency test...
+
+Total cost for loop latency over 1000000 iterations
+min cycles   : 21
+max cycles   : 63385
+mean cycles  : 27.130348
+std deviation: 82.334606
+ 
+Performing start/stop test...
+
+Total cost for PAPI_start/stop (2 counters) over 1000000 iterations
+min cycles   : 25641
+max cycles   : 198471
+mean cycles  : 26197.872778
+std deviation: 1409.572333
+ 
+Performing read test...
+
+Total cost for PAPI_read (2 counters) over 1000000 iterations
+min cycles   : 3941
+max cycles   : 180600
+mean cycles  : 4096.613605
+std deviation: 420.190058
+ 
+Performing read with timestamp test...
+
+Total cost for PAPI_read_ts (2 counters) over 1000000 iterations
+min cycles   : 3892
+max cycles   : 178052
+mean cycles  : 4105.263799
+std deviation: 454.925408
+ 
+Performing accum test...
+
+Total cost for PAPI_accum (2 counters) over 1000000 iterations
+min cycles   : 7476
+max cycles   : 186487
+mean cycles  : 7743.131767
+std deviation: 626.734289
+ 
+Performing reset test...
+
+Total cost for PAPI_reset (2 counters) over 1000000 iterations
+min cycles   : 2821
+max cycles   : 220766
+mean cycles  : 2865.220841
+std deviation: 359.354023
+ 	I was unable to find a DERIVED_POSTFIX preset event to test on this architecture, skipping.
+
+Performing DERIVED_[ADD|SUB] PAPI_read(2 counters)  test (PAPI_L1_DCA)...
+Total cost for  PAPI_read (1 derived_[add|sub] counter) over 1000000 iterations
+min cycles   : 3864
+max cycles   : 196812
+mean cycles  : 4017.481692
+std deviation: 460.431683
+ cost.c                                       PASSED

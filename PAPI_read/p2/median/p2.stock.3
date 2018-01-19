@@ -1,0 +1,87 @@
+Cost of execution for PAPI start/stop, read and accum.
+This test takes a while. Please be patient...
+
+Performing loop latency test...
+
+Total cost for loop latency over 1000000 iterations
+min cycles   : 38
+max cycles   : 57533
+mean cycles  : 38.756252
+std deviation: 146.540406
+25% cycles   : 38
+50% cycles   : 38
+75% cycles   : 38
+99% cycles   : 38
+
+Performing start/stop test...
+
+Total cost for PAPI_start/stop (2 counters) over 1000000 iterations
+min cycles   : 13178
+max cycles   : 282890
+mean cycles  : 13771.508278
+std deviation: 2495.088293
+25% cycles   : 13476
+50% cycles   : 13508
+75% cycles   : 13586
+99% cycles   : 18365
+
+Performing read test...
+
+Total cost for PAPI_read (2 counters) over 1000000 iterations
+min cycles   : 2421
+max cycles   : 175604
+mean cycles  : 2535.744238
+std deviation: 996.234595
+25% cycles   : 2497
+50% cycles   : 2497
+75% cycles   : 2507
+99% cycles   : 2515
+
+Performing read with timestamp test...
+
+Total cost for PAPI_read_ts (2 counters) over 1000000 iterations
+min cycles   : 2355
+max cycles   : 150047
+mean cycles  : 2450.551562
+std deviation: 982.920059
+25% cycles   : 2395
+50% cycles   : 2409
+75% cycles   : 2435
+99% cycles   : 2461
+
+Performing accum test...
+
+Total cost for PAPI_accum (2 counters) over 1000000 iterations
+min cycles   : 4686
+max cycles   : 180399
+mean cycles  : 4937.096171
+std deviation: 1431.852311
+25% cycles   : 4816
+50% cycles   : 4858
+75% cycles   : 4896
+99% cycles   : 5009
+
+Performing reset test...
+
+Total cost for PAPI_reset (2 counters) over 1000000 iterations
+min cycles   : 2153
+max cycles   : 178346
+mean cycles  : 2206.184283
+std deviation: 920.728997
+25% cycles   : 2171
+50% cycles   : 2175
+75% cycles   : 2175
+99% cycles   : 2205
+	I was unable to find a DERIVED_POSTFIX preset event to test on this architecture, skipping.
+
+Performing DERIVED_[ADD|SUB] PAPI_read(2 counters)  test (PAPI_L2_DCA)...
+Total cost for  PAPI_read (1 derived_[add|sub] counter) over 1000000 iterations
+min cycles   : 2373
+max cycles   : 175403
+mean cycles  : 2441.601533
+std deviation: 998.856651
+25% cycles   : 2385
+50% cycles   : 2401
+75% cycles   : 2417
+99% cycles   : 2459
+cost.c                                       PASSED

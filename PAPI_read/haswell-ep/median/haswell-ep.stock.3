@@ -1,0 +1,87 @@
+Cost of execution for PAPI start/stop, read and accum.
+This test takes a while. Please be patient...
+
+Performing loop latency test...
+
+Total cost for loop latency over 1000000 iterations
+min cycles   : 24
+max cycles   : 20304
+mean cycles  : 26.111868
+std deviation: 24.231645
+25% cycles   : 24
+50% cycles   : 24
+75% cycles   : 24
+99% cycles   : 38
+
+Performing start/stop test...
+
+Total cost for PAPI_start/stop (2 counters) over 1000000 iterations
+min cycles   : 7033
+max cycles   : 565611
+mean cycles  : 7200.412092
+std deviation: 2896.228088
+25% cycles   : 7102
+50% cycles   : 7115
+75% cycles   : 7139
+99% cycles   : 9324
+
+Performing read test...
+
+Total cost for PAPI_read (2 counters) over 1000000 iterations
+min cycles   : 804
+max cycles   : 542553
+mean cycles  : 837.815903
+std deviation: 934.193787
+25% cycles   : 829
+50% cycles   : 835
+75% cycles   : 839
+99% cycles   : 880
+
+Performing read with timestamp test...
+
+Total cost for PAPI_read_ts (2 counters) over 1000000 iterations
+min cycles   : 804
+max cycles   : 960285
+mean cycles  : 842.881786
+std deviation: 1332.942675
+25% cycles   : 832
+50% cycles   : 838
+75% cycles   : 844
+99% cycles   : 884
+
+Performing accum test...
+
+Total cost for PAPI_accum (2 counters) over 1000000 iterations
+min cycles   : 1697
+max cycles   : 547139
+mean cycles  : 1742.132507
+std deviation: 1412.881223
+25% cycles   : 1725
+50% cycles   : 1732
+75% cycles   : 1740
+99% cycles   : 1789
+
+Performing reset test...
+
+Total cost for PAPI_reset (2 counters) over 1000000 iterations
+min cycles   : 874
+max cycles   : 540364
+mean cycles  : 900.606031
+std deviation: 1359.349381
+25% cycles   : 890
+50% cycles   : 894
+75% cycles   : 897
+99% cycles   : 936
+	I was unable to find a DERIVED_POSTFIX preset event to test on this architecture, skipping.
+
+Performing DERIVED_[ADD|SUB] PAPI_read(2 counters)  test (PAPI_L1_TCM)...
+Total cost for  PAPI_read (1 derived_[add|sub] counter) over 1000000 iterations
+min cycles   : 804
+max cycles   : 541450
+mean cycles  : 842.854688
+std deviation: 1420.593468
+25% cycles   : 832
+50% cycles   : 835
+75% cycles   : 841
+99% cycles   : 887
+cost.c                                       PASSED
