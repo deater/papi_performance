@@ -1,0 +1,5 @@
+Note to self, this was actually originally in a google docs spreadhseet.
+
+The measurements were made by sticking rdpmc calls by hand before and
+after the PAPI_read() and assuming that nothing changed in the interim.
+

@@ -1,0 +1,38 @@
+STREAM (ararry size=1000000),,,,
+"final_user means user event cost by each sub routine, 
+final kernel means kernel event cost by each sub routine. 
+raw_diff_user means user event cost by PAPI_read after each routine, 
+raw_diff_kernel means kernel event cost by PAPI_read after each routine",,,,
+,copy,scale,add,tride
+read_cyc(rdpmc),4382,4843,4293,4340
+read_cyc(read call),18761,19111,18795,19152
+,,,,
+final_user_tot_cyc(rdpmc),77899090,78249991,103544165,103404256
+final_kernel_tot_cyc,274615,153988,197991,197145
+raw_diff_user_tot_cyc,5747,6107,5972,5534
+raw_diff_kernel_tot_cyc,0,0,0,0
+,,,,
+final_user_tot_cyc(read call),77837826,78246710,103415911,103155026
+final_kernel_tot_cyc,282488,165248,203152,204991
+raw_diff_user_tot_cyc,5716,5837,5508,5542
+raw_diff_kernel_tot_cyc,16710,17260,16898,16821
+,,,,
+final_user_l1_dcm(rdpmc),2507382,2505453,3757636,3757679
+final_kernel_l1_dcm,5133,1105,1473,1469
+raw_diff_user_l1_dcm,40,38,38,39
+raw_diff_kernel_l1_dcm,0,0,0,0
+,,,,
+final_user_l1_dcm(read call),2507430,2505202,3757649,3757708
+final_kernel_l1_dcm,5197,1202,1572,1568
+raw_diff_user_l1_dcm,35,37,36,35
+raw_diff_kernel_l1_dcm,119,122,121,124
+,,,,
+final_user_TLB_DM(rdpmc),1150,2455,2712,2451
+final_kernel_TLB_DM,1373,2664,3013,2734
+raw_diff_user_TLB_DM,13,14,12,12
+raw_diff_kernel_TLB_DM,13,14,12,12
+,,,,
+final_user_TLB_DM(read call),1175,2352,2895,2804
+final_kernel_TLB_DM,1504,2673,3322,3223
+raw_diff_user_TLB_DM,14,15,14,14
+raw_diff_kernel_TLB_DM,38,38,38,38

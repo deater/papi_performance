@@ -1,0 +1,73 @@
+hpl (N=16000 NB=128),,,,,,,
+"final_user means user event cost by each sub routine, 
+final kernel means kernel event cost by each sub routine. 
+raw_diff_user means user event cost by PAPI_read after each routine, 
+raw_diff_kernel means kernel event cost by PAPI_read after each routine",,,,,,,
+,HPL_pdpanel_init,HPL_pdfact,HPL_binit,HPL_bcast,HPL_bwait,HPL_pdupdate,MNxtMgid
+read_cyc_cost(rdpmc),384,3496,355,356,388,3838,346
+read_cyc_cost(read system call),2004,17417,2014,1998,2179,18958,2008
+,,,,,,,
+final user_cyc(rdpmc),5848,25030188,1640,1478,969,635926290,1476
+final_kernel_cyc,1031,703074,602,586,586,11432668,602
+raw_diff_user_cyc,512,4019,464,408,426,4813,420
+raw_diff_kernel_cyc,0,0,0,0,0,0,0
+,,,,,,,
+final user_cyc(read call),6320,24920950,1440,1288,849,635326136,997
+final_kernel_cyc,3670,731497,3372,3347,3348,8585896,3379
+raw_diff_user_cyc,461,4551,383,379,396,4925,398
+raw_diff_kernel_cyc,1755,13545,1752,1741,1740,16024,1753
+,,,,,,,
+final user_l1_dcm(rdpmc),25,1753975,10,5,3,39804016,7
+final_kernel_l1_dcm,6,2844,2,0,0,10104,0
+raw_diff_user_l1_dcm,5,39,6,2,2,38,5
+raw_diff_kernel_l1_dcm,0,0,0,0,0,0,0
+,,,,,,,
+final_user_l1_dcm(read call),26,1753836,16,6,5,39939008,10
+final_kernel_l1_dcm,16,2824,22,15,14,9891,20
+raw_diff_user_l1_dcm,7,43,8,3,3,43,7
+raw_diff_kernel_l1_dcm,20,123,18,13,12,98,17
+,,,,,,,
+final_user_TLB_DM(rdpmc-2 events),1.5,10530,1,1,0,300238,0
+final_kernel_TLB_DM,0,170,0,0,0,1574,0
+raw_diff_user_TLB_DM,0,11,0,0,0,13,0
+raw_diff_kernel_TLB_DM,0,0,0,0,0,0,0
+,,,,,,,
+final_user_TLB_DM(read call-2 events),0,10537,0,0,0,302512,0
+final_kernel_TLB_DM,0,186,0,0,0,1760,1
+raw_diff_user_TLB_DM,0,16,0,0,0,18,0
+raw_diff_kernel_TLB_DM,0,16,0,0,0,17,0
+,,,,,,,
+final_user_TLB_DM(rdpmc-3 events),2,10497,0,0,0,301124,0
+final_kernel_TLB_DM,0,173,0,0,0,1630,0
+raw_diff_user_TLB_DM,0,14,0,0,0,15,0
+raw_diff_kernel_TLB_DM,0,0,0,0,0,0,0
+,,,,,,,
+final_user_TLB_DM(read call-3 events),0,10560,0,0,0,300538,0
+final_kernel_TLB_DM,0,192,0,0,0,1822,1
+raw_diff_user_TLB_DM,0,15,0,0,0,16,0
+raw_diff_kernel_TLB_DM,0,17,0,0,0,19,0
+,,,,,,,
+final_user_TLB_DM(rdpmc-4 events),1.5,10546,1,1,0,303715,0
+final_kernel_TLB_DM,0,181,0,0,0,1715,0
+raw_diff_user_TLB_DM,0,16,0,0,0,15,0
+raw_diff_kernel_TLB_DM,0,0,0,0,0,0,0
+,,,,,,,
+final_user_TLB_DM(read call-4 events),1,10526,0,0,0,303361,0
+final_kernel_TLB_DM,1,205,0,0,0,1825,1
+raw_diff_user_TLB_DM,0,16,0,0,0,16,0
+raw_diff_kernel_TLB_DM,0,18,0,0,0,18,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+HPL_pdfact,2 events,3 events,4 events,,,,
+final_user_TLB_DM(rdpmc),10530,10497,10546,,,,
+final_user_TLB_DM(read),10537,10560,10526,,,,
+,,,,,,,
+final_kernel_TLB_DM(rdpmc),170,173,181,,,,
+final_kernel_TLB_DM(read),186,192,205,,,,
+,,,,,,,
+raw_diff_user_TLB_DM(rdpmc),11,14,16,,,,
+raw_diff_user_TLB_DM(read),16,15,16,,,,
+,,,,,,,
+raw_diff_kernel_TLB_DM(rdpmc),0,0,0,,,,
+raw_diff_kernel_TLB_DM(read),16,17,18,,,,
