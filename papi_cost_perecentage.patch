@@ -1,0 +1,117 @@
+diff --git a/src/utils/cost_utils.c b/src/utils/cost_utils.c
+index 42716f0..4dc3926 100644
+--- a/src/utils/cost_utils.c
++++ b/src/utils/cost_utils.c
+@@ -4,7 +4,6 @@
+ #define NUM_ITERS	1000000
+ 
+ int num_iters = NUM_ITERS;
+-
+ /* computes min, max, and mean for an array; returns std deviation */
+ double
+ do_stats( long long *array, long long *min, long long *max, double *average )
+@@ -76,3 +75,52 @@ do_dist( long long *a, long long min, long long max, int bins, int *d )
+ 	}
+ }
+ 
++int partition( long long a[], int l, int r) {
++   long  pivot, i, j, t;
++   pivot = a[l];
++   i = l; j = r+1;
++		
++   while( 1)
++   {
++   	do ++i; while( a[i] < pivot && i < r );
++   	do --j; while( a[j] > pivot );
++   	if( i >= j ) break;
++   	t = a[i]; a[i] = a[j]; a[j] = t;
++   }
++   t = a[l]; a[l] = a[j]; a[j] = t;
++   return j;
++}
++void quickSort( long long a[], int l, int r)
++{
++   int j;
++
++   if( l < r ) 
++   {
++   	// divide and conquer
++        j = partition( a, l, r);
++       quickSort( a, l, j-1);
++       quickSort( a, j+1, r);
++   }
++	
++}
++
++void do_percentile(long long *a, long long *percent25, long long *percent50, long long *percent75,long long *percent99)
++{
++	long long *a_sort;
++	a_sort = calloc(num_iters,sizeof(long long));
++	memcpy(a_sort,a,num_iters*sizeof(long long));
++	int i_25=(int)num_iters/4;
++	int i_50=(int)num_iters/2;
++	int i_75=(int)num_iters/4*3; // index for  75%, not quite accurate cause didn't take even or odd in consideratio
++	int i_99=(int)num_iters/10*9.9;	
++	quickSort(a_sort,0,num_iters-1);
++
++	
++	*percent25=a_sort[i_25];
++	*percent50=a_sort[i_50];
++	*percent75=a_sort[i_75];
++	*percent99=a_sort[i_99];
++	free(a_sort);
++	a_sort=NULL;
++
++}
+diff --git a/src/utils/papi_cost.c b/src/utils/papi_cost.c
+index 2bd7b17..706215d 100644
+--- a/src/utils/papi_cost.c
++++ b/src/utils/papi_cost.c
+@@ -106,7 +106,7 @@ print_stats( int i, long long min, long long max, double average, double std )
+ 	};
+ 	printf( "\nTotal cost for %s over %d iterations\n", test[i], num_iters );
+ 	printf
+-		( "min cycles   : %lld\nmax cycles   : %lld\nmean cycles  : %lf\nstd deviation: %lf\n ",
++		( "min cycles   : %lld\nmax cycles   : %lld\nmean cycles  : %lf\nstd deviation: %lf\n",
+ 		  min, max, average, std );
+ }
+ 
+@@ -145,7 +145,13 @@ print_dist( long long min, long long max, int bins, int *d )
+ 		printf( "\n" );
+ 	}
+ }
+-
++static void
++print_percentile(long long percent25, long long percent50, long long percent75,long long percent99)
++{
++	printf	
++	("25%% cycles   : %lld\n50%% cycles   : %lld\n75%% cycles   : %lld\n99%% cycles   : %lld\n",
++	percent25,percent50,percent75,percent99);
++}
+ static void
+ do_output( int test_type, long long *array, int bins, int show_std_dev,
+ 		   int show_dist )
+@@ -153,11 +159,13 @@ do_output( int test_type, long long *array, int bins, int show_std_dev,
+ 	int s[10];
+ 	long long min, max;
+ 	double average, std;
++	long long percent25,percent50,percent75,percent99;
+ 
+ 	std = do_stats( array, &min, &max, &average );
+-
+ 	print_stats( test_type, min, max, average, std );
+ 
++	do_percentile(array,&percent25,&percent50,&percent75,&percent99);
++	print_percentile(percent25,percent50,percent75,percent99);
+ 	if ( show_std_dev ) {
+ 		do_std_dev( array, s, std, average );
+ 		print_std_dev( s );
+@@ -179,7 +187,7 @@ main( int argc, char **argv )
+ 	int i, retval, EventSet = PAPI_NULL;
+ 	int retval_start,retval_stop;
+ 	int bins = 100;
+-	int show_dist = 0, show_std_dev = 0;
++	int show_dist = 0, show_std_dev = 0; 
+ 	long long totcyc, values[2];
+ 	long long *array;
+ 	int event;
