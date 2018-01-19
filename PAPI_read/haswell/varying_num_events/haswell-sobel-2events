@@ -1,0 +1,6 @@
+output_width=1920, output_height=1200, output_components=3
+Total cost for PAPI_read over 1000000 iterations 
+min cycles : 879
+max cycles : 74100
+average cycles : 1221.134325
+standard deviation: 405.332340
