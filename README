@@ -1,0 +1,14 @@
+Performance Overhead Results for PAPI
+
+These are generally measured with the "papi_cost" tool that
+comes with PAPI, optionally with the included patch applied that
+bins into percentiles.
+
+This is the data used in Yan Liu's masters thesis
+	Optimizing PAPI for Low-Overhead Counter Measurement
+
+Also the 2017 Extreme-Scale Programming Tools Workshop Paper
+	Enhancing PAPI with Low-Overhead rdpmc Reads
+
+For more info see:
+	http://web.eece.maine.edu/~vweaver/projects/papi-rdpmc/
