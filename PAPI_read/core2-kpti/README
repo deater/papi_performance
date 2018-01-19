@@ -1,0 +1,11 @@
+linux-4.8.0	= results on Linux 4.8 kernel
+
+4.15-rc7.read	= read() results on Linux 4.15-rc7 with KPTI enabled
+4.15-rc7.nokpti	= read() results on Linux 4.15-rc7 with KPTI disabled
+4.15-rc7.pti=off= read() results on Linux 4.15-rc7 with KTPI enabled buy
+			pti=off kernel commend line argument
+4.15-rc7.rdpmc	= rdpmc() results on Linux 4.15-rc7 with KPTI enabled
+
+
+
+
