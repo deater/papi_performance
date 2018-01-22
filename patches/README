@@ -1,0 +1,4 @@
+Some patches used in this research
+
++ papi_cost_perecentage.patch
+	Similar code has been merged upstream, use "papi_cost -p"
